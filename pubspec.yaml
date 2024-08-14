@@ -31,7 +31,9 @@ dependencies:
   cupertino_icons: ^1.0.8
   flutter:
     sdk: flutter
+  flutter_localization: ^0.2.1
   rename: ^3.0.2
+  svg_flutter: ^0.0.1
 
 dev_dependencies:
   flutter_launcher_icons: ^0.13.1
@@ -84,3 +86,5 @@ flutter_launcher_icons:
   ios: true
   image_path: "assets/images/fruit_app_icon.png"
   min_sdk_android: 21
+flutter_intl:
+  enabled: true

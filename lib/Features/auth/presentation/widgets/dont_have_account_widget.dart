@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fruit/core/Utils/app_colors.dart';
+import 'package:fruit/core/Utils/app_router.dart';
 import 'package:fruit/core/Utils/app_style.dart';
 
 class DontHaveAccountWidget extends StatelessWidget {
@@ -18,7 +19,9 @@ class DontHaveAccountWidget extends StatelessWidget {
               AppStyle.body16Semibold.copyWith(color: Colors.grey[400]),
         ),
         TextButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.of(context).pushNamed(AppRouter.signUp);
+            },
             child: Text(
               'انشاء حساب',
               style: AppStyle.body16Semibold

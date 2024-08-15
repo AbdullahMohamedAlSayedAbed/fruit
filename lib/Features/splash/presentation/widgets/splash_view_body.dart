@@ -20,8 +20,9 @@ class _SplashViewBodyState extends State<SplashViewBody> {
   }
 
   Future<Null> executeNavigation() {
+   bool onBoardingVisited = SharedPreferenceSingleton.getBool(kOnBoardingVisited);
     return Future.delayed(const Duration(seconds: 3), () {
-      if (SharedPreferenceSingleton.getBool(kOnBoardingVisited)) {
+      if (onBoardingVisited) {
         Navigator.pushReplacementNamed(context, AppRouter.login);
       } else {
         Navigator.pushReplacementNamed(context, AppRouter.onBoarding);

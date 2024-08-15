@@ -45,6 +45,10 @@ abstract class AppStyle {
     fontSize: 16,
     fontWeight: FontWeight.w700,
   );
+  static const body17Bold = TextStyle(
+    fontSize: 17,
+    fontWeight: FontWeight.w700,
+  );
 
   static const body19Regular = TextStyle(
     fontSize: 19,

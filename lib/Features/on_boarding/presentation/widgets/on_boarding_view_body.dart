@@ -1,7 +1,5 @@
-import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:fruit/constants.dart';
-import 'package:fruit/core/Utils/app_colors.dart';
 import 'package:fruit/core/Utils/app_router.dart';
 import 'package:fruit/core/services/shared_preference_singletone.dart';
 import 'package:fruit/core/widgets/custom_buttton.dart';

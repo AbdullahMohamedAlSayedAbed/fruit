@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fruit/core/Utils/app_style.dart';
 
 class CustomButton extends StatelessWidget {
   const CustomButton({super.key, required this.onTap, required this.text});
@@ -14,7 +15,7 @@ class CustomButton extends StatelessWidget {
       child: Container(
         width: double.infinity,
         height: 54,
-        padding: const EdgeInsets.symmetric(horizontal: 48, vertical: 15),
+        padding: const EdgeInsets.symmetric(horizontal: 48),
         decoration: ShapeDecoration(
           color: const Color(0xFF1B5E37),
           shape: RoundedRectangleBorder(
@@ -25,13 +26,7 @@ class CustomButton extends StatelessWidget {
           child: Text(
             text,
             textAlign: TextAlign.center,
-            style: const TextStyle(
-              color: Colors.white,
-              fontSize: 16,
-              fontFamily: 'Cairo',
-              fontWeight: FontWeight.w700,
-              height: 0,
-            ),
+            style: AppStyle.body17Bold.copyWith(color: Colors.white),
           ),
         ),
       ),

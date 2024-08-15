@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:fruit/constants.dart';
 import 'package:fruit/core/Utils/app_router.dart';
 import 'package:fruit/core/Utils/assets.dart';
+import 'package:fruit/core/services/shared_preference_singletone.dart';
 import 'package:svg_flutter/svg.dart';
 
 class SplashViewBody extends StatefulWidget {
@@ -19,7 +21,11 @@ class _SplashViewBodyState extends State<SplashViewBody> {
 
   Future<Null> executeNavigation() {
     return Future.delayed(const Duration(seconds: 3), () {
-      Navigator.pushReplacementNamed(context, AppRouter.onBoarding);
+      if (SharedPreferenceSingleton.getBool(kOnBoardingVisited)) {
+        Navigator.pushReplacementNamed(context, AppRouter.login);
+      } else {
+        Navigator.pushReplacementNamed(context, AppRouter.onBoarding);
+      }
     });
   }
 

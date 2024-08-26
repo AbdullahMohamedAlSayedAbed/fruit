@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruit/Features/auth/presentation/cupit/signin_cubit/signin_cubit.dart';
@@ -86,11 +88,16 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                 image: Assets.imagesGoogleIcons,
               ),
               const SizedBox(height: 16),
-              // const SocialLoginButton(
-              //   text: 'تسجيل بواسطة أبل',
-              //   image: Assets.imagesAppleIcons,
-              // ),
-              // const SizedBox(height: 16),
+              if(Platform.isIOS)
+              const Column(
+                children: [
+                  SocialLoginButton(
+                    text: 'تسجيل بواسطة أبل',
+                    image: Assets.imagesAppleIcons,
+                  ),
+                  SizedBox(height: 16),
+                ],
+              ),
               // SocialLoginButton(
               //   onTap: () {
               //     context.read<SigninCubit>().signInWithFacebook();

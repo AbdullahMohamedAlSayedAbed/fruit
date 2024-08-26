@@ -25,7 +25,7 @@ class DontHaveAccountWidget extends StatelessWidget {
             child: Text(
               'انشاء حساب',
               style: AppStyle.body16Semibold
-                  .copyWith(color: AppColors.primary),
+                  .copyWith(color: AppColors.lightPrimary),
             ))
       ],
     );

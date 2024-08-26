@@ -20,7 +20,7 @@ class HaveAccount extends StatelessWidget {
             },
             child: Text(
               'تسجيل دخول',
-              style: AppStyle.body16Semibold.copyWith(color: AppColors.primary),
+              style: AppStyle.body16Semibold.copyWith(color: AppColors.lightPrimary),
             ))
       ],
     );

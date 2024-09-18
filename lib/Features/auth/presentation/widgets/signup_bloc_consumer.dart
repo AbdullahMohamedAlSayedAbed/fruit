@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruit/Features/auth/presentation/cupit/signup_cubit/signup_cubit.dart';
 import 'package:fruit/Features/auth/presentation/widgets/sign_up_view_body.dart';
+import 'package:fruit/core/Utils/app_router.dart';
 import 'package:fruit/core/functions/build_error_bar.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
@@ -15,7 +16,7 @@ class SignupBlocConsumer extends StatelessWidget {
     return BlocConsumer<SignupCubit, SignupState>(
       listener: (context, state) {
         if (state is SignupSuccess) {
-          
+          Navigator.of(context).pop();
         }
         if (state is SignupFailure) {
           buildErrorSnackBar(context, state.errMassage);
@@ -23,11 +24,8 @@ class SignupBlocConsumer extends StatelessWidget {
       },
       builder: (context, state) {
         return ModalProgressHUD(
-          inAsyncCall: state is SignupLoading,
-          child: const SignUpViewBody());
+            inAsyncCall: state is SignupLoading, child: const SignUpViewBody());
       },
     );
   }
-
-
 }

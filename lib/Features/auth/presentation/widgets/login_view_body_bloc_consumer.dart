@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruit/Features/auth/presentation/cupit/signin_cubit/signin_cubit.dart';
 import 'package:fruit/Features/auth/presentation/widgets/login_view_body.dart';
+import 'package:fruit/core/Utils/app_router.dart';
 import 'package:fruit/core/functions/build_error_bar.dart';
 
 import '../../../../core/widgets/custom_progress_h_u_d.dart';
@@ -16,7 +17,7 @@ class LoginViewBodyBlocConsumer extends StatelessWidget {
     return BlocConsumer<SigninCubit, SigninState>(
       listener: (context, state) {
         if (state is SigninSuccess) {
-          
+          Navigator.of(context).pushNamed(AppRouter.homeView);
         }
         if (state is SigninFailure) {
           buildErrorSnackBar(context, state.errMessage);
